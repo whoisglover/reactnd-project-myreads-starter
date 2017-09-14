@@ -1,14 +1,11 @@
 import React from 'react'
-// import * as BooksAPI from './BooksAPI'
 import './App.css'
 import {Route} from 'react-router-dom'
-import {Link} from 'react-router-dom'
 import Search from './Search'
 import BookList from './BookList'
 import * as BooksAPI from './BooksAPI'
 class BooksApp extends React.Component {
   state = {
-
     books: [],
     showSearchPage: false
   }
@@ -32,8 +29,6 @@ class BooksApp extends React.Component {
         localStorage.setItem('bookIds', bookIds)
       })
     }
-    // var booksLocal = this.state.books
-    //filter out existing instance of this book in case it alreayd is in the master list
   }
 
   componentDidMount(){
@@ -58,7 +53,6 @@ class BooksApp extends React.Component {
     }
   }
 
-
   render() {
     return (
       <div className="app">
@@ -68,8 +62,6 @@ class BooksApp extends React.Component {
         <Route exact path="/search" render={() => (
           <Search onSaveBook={this.updateBook} />
         )}/>
-
-
       </div>
     )
   }

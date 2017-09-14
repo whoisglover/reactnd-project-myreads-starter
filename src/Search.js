@@ -1,7 +1,6 @@
 import React from 'react'
 import * as BooksAPI from './BooksAPI'
 import './App.css'
-import {Route} from 'react-router-dom'
 import {Link} from 'react-router-dom'
 
 class Search extends React.Component {
@@ -9,7 +8,6 @@ class Search extends React.Component {
     query: '',
     bookResults: []
   }
-
 
   searchBooks = (query) => {
     BooksAPI.search(query).then(res => {
@@ -51,7 +49,6 @@ class Search extends React.Component {
                 value={query}
                 onChange={(event) =>this.searchBooks(event.target.value)}
               />
-
             </div>
           </div>
           <div className="search-books-results">
@@ -75,11 +72,7 @@ class Search extends React.Component {
                     <div className="book-authors">{book.artist}</div>
                   </div>
                 </li>
-
-
-
               ))}
-
             </ol>
           </div>
         </div>
